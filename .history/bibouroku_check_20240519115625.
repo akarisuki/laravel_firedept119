@@ -1,0 +1,4 @@
+Laravelプロジェクト立ち上げ後にやること
+
+1.このままAPPポートに接続すると403(fobbidon)で[You dont have permission to access this resource]となるこれは
+apache2のパーミッション設定で接続権限がないことになっている。

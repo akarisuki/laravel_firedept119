@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';  // Reactを使用している場合
 
 export default defineConfig({
     server: {
-        host: 'localhost',
+        host: true,
         port: 5173,
         hmr: {
             host: 'localhost',  // Dockerを使用している場合は、ここをDockerホストのIPに変更

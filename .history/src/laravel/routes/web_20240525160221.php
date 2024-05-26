@@ -25,7 +25,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/prefectures', [PrefectureController::class, 'index']);
-Route::get('/prefectures/{id}/fire-departments', [PrefectureController::class, 'getFireDepartments']);
+Route::get('/prefectures', 'PrefecturesController@index');
+Route::get('/prefectures/{id}/fire-departments', 'PrefectureController@getFireDepartments');
 
 require __DIR__.'/auth.php';

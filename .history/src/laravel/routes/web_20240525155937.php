@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PrefectureController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -25,7 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/prefectures', [PrefectureController::class, 'index']);
-Route::get('/prefectures/{id}/fire-departments', [PrefectureController::class, 'getFireDepartments']);
+Route::get('/prefectures', 'PrefecturesController@index');
 
 require __DIR__.'/auth.php';

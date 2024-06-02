@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PrefecturesSelect  from "./PrefecturesSelect";
-import FireDepartmentsSelect from "./FireDepartmentsSelect";
+import FireDepartmentsSelect from "./PrefectureAndFireDepartmentSelect";
 
 function PrefecturePage() {
     const [selectedPrefecture, setSelectedPrefecture] = useState('');

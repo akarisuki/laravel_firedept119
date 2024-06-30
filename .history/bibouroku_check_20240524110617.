@@ -1,0 +1,17 @@
+Laravelプロジェクト立ち上げ後にやること
+
+1.このままAPPポートに接続すると403(fobbidon)で[You dont have permission to access this resource]となるこれは
+apache2のパーミッション設定で接続権限がないことになっている。
+
+ファイルとディレクトリのパーミッションを確認・変更:
+
+000-default.confのファイルを開いて確認する。
+
+chmod -R 755 /var/www/html/laravel
+
+chown -R www-data:www-data /var/www/html/laravel
+
+
+vite　
+sh: 1: vite: not foundの場合
+npm updateで解決

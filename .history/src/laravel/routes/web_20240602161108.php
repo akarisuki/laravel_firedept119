@@ -4,7 +4,6 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PrefectureController;
 use App\Http\Controllers\FireDepartmentController;
-use App\Http\Controllers\TaishobutuMainController;
 use App\Models\FireDepartment;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -41,9 +40,6 @@ Route::controller(FireDepartmentController::class)->group(function () {
     Route::get('api/firedepartment/{prefectureId}', 'getByPrefecture');
 });
 
-Route::controller(TaishobutuMainController::class)->group(function () {
-    Route::get('/taishoubutu_main/index', 'index');
-});
 
 
 require __DIR__.'/auth.php';

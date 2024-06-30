@@ -5,7 +5,7 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
-import PrefectureAndFireDepartmentSelect from '@/Components/PrefectureAndFireDepartmentSelect';
+import PulldownMenu from '@/Components/PrefectureAndFireDepartmentSelect';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -27,6 +27,10 @@ export default function Register() {
         e.preventDefault();
 
         post(route('register'));
+    };
+
+    const handleFireDepartmentSelect = (fireDepartmentId) => {
+        setData('fire_department_id', fireDepartmentId);
     };
 
     return (
@@ -51,9 +55,7 @@ export default function Register() {
                     <InputError message={errors.name} className="mt-2" />
                 </div>
 
-                <PrefectureAndFireDepartmentSelect
-                    prefectures={/* 都道府県データ　 */}
-                />
+                
 
                 <div className="mt-4">
                     <InputLabel htmlFor="email" value="Email" />
@@ -104,6 +106,12 @@ export default function Register() {
                     />
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
+                </div>
+
+                <div className='mt-4'>
+                    <InputLabel htmlFor="prefecture" value="Prefecture" />
+                    < PulldownMenu onFireDepartmentSelect={handleFireDepartmentSelect}/>
+                    {errors.fire_department_id && <InputError message={errors.fire_department_id} className="mt-2"/>}
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
